@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const { soma, divisao, multiplicacao } = require("./operacoes");
+const { soma, subtracao, divisao, multiplicacao } = require("./operacoes");
 const port = 3001;
 
 app.use(bodyParser.json());
@@ -14,6 +14,12 @@ app.post("/soma", (req, res) => {
   const { a, b } = req.body;
   const resultado = soma(a, b);
   res.send(`Soma de ${a} e ${b} é ${resultado}`);
+});
+
+app.post("/subtracao", (req, res) => {
+  const { a, b } = req.body;
+  const resultado = subtracao(a, b);
+  res.send(`Subtração de ${a} e ${b} é ${resultado}`);
 });
 
 app.post("/divisao", (req, res) => {

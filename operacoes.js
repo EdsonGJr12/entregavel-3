@@ -1,6 +1,11 @@
 exports.soma = (a, b) => {
   return a + b;
 };
+
+exports.subtracao = (a, b) => {
+  return a - b;
+};
+
 exports.divisao = (a, b) => {
   return (a / b).toFixed(2);
 };
